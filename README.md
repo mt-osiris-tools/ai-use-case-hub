@@ -2,6 +2,124 @@
 
 A centralized repository for documenting AI-assisted development workflows across all projects.
 
+## 📋 Table of Contents
+
+- [Getting Started](#-getting-started)
+- [Quick Start](#-quick-start)
+- [Directory Structure](#-directory-structure)
+- [How It Works](#-how-it-works)
+- [Configuration](#-configuration)
+- [Best Practices](#-best-practices)
+- [Troubleshooting](#-troubleshooting)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+Before installing, ensure you have:
+
+- **Git** (version 2.0+)
+  ```bash
+  git --version
+  ```
+- **Bash** (version 4.0+) - comes pre-installed on Linux/macOS
+  ```bash
+  bash --version
+  ```
+- **Basic tools:** `find`, `grep`, `ln` (standard on Unix-like systems)
+
+**Optional:**
+- **VS Code** (for extension features)
+- **Node.js** (v16+, only if developing the VS Code extension)
+
+### Installation
+
+#### 1. Clone the Repository
+
+```bash
+# Clone to your home directory (recommended location)
+cd ~/Documents
+git clone https://github.com/james401/ai-use-case-hub-.git ai-use-cases
+
+# Or clone to a custom location
+git clone https://github.com/james401/ai-use-case-hub-.git /path/to/custom/location
+```
+
+#### 2. Make Scripts Executable
+
+```bash
+cd ~/Documents/ai-use-cases
+chmod +x setup-project.sh
+chmod +x sync-ai-use-cases.sh
+chmod +x document-ai-session.sh
+```
+
+#### 3. (Optional) Add to PATH
+
+For easier access from anywhere, add to your shell profile:
+
+```bash
+# For bash users - add to ~/.bashrc
+echo 'export AI_USECASES_DIR="$HOME/Documents/ai-use-cases"' >> ~/.bashrc
+echo 'export PATH="$AI_USECASES_DIR:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+
+# For zsh users - add to ~/.zshrc
+echo 'export AI_USECASES_DIR="$HOME/Documents/ai-use-cases"' >> ~/.zshrc
+echo 'export PATH="$AI_USECASES_DIR:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+#### 4. Verify Installation
+
+```bash
+# Test that scripts are accessible
+~/Documents/ai-use-cases/setup-project.sh --help 2>/dev/null || echo "✓ Setup script found"
+~/Documents/ai-use-cases/document-ai-session.sh --help 2>/dev/null || echo "✓ Document script found"
+
+# Check directory structure
+ls -la ~/Documents/ai-use-cases/
+```
+
+You should see:
+- `setup-project.sh` (executable)
+- `sync-ai-use-cases.sh` (executable)
+- `document-ai-session.sh` (executable)
+- `by-project/`, `by-date/`, `by-topic/` directories
+- `TEMPLATE.md`, `README.md`, etc.
+
+### First Project Setup
+
+Now that the central repository is installed, set up your first project:
+
+```bash
+# Navigate to your project
+cd /path/to/your-project
+
+# Run the setup script
+~/Documents/ai-use-cases/setup-project.sh
+
+# You should see:
+# ✓ Created: docs/ai-use-cases/
+# ✓ Git post-commit hook installed
+# ✓ Sync complete!
+```
+
+That's it! Your project is now ready to document AI sessions.
+
+### Quick Test
+
+Document a test session:
+
+```bash
+cd /path/to/your-project
+
+# Run the interactive documentor
+~/Documents/ai-use-cases/document-ai-session.sh
+
+# Follow the prompts to create your first use case documentation
+```
+
 ## 📁 Directory Structure
 
 ```

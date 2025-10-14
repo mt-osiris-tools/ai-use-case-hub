@@ -17,3 +17,7 @@ Thumbs.db
 # Local drafts (should not be in central repo anyway)
 *.draft.md
 *.local.md
+
+# AI Use Cases - ignore local notes
+docs/ai-use-cases/*.draft.md
+docs/ai-use-cases/*.local.md
