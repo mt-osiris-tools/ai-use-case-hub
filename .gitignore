@@ -1,0 +1,19 @@
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+
+# Local drafts (should not be in central repo anyway)
+*.draft.md
+*.local.md
