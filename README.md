@@ -6,22 +6,28 @@ A centralized repository for documenting AI-assisted development workflows acros
 
 ```
 ai-use-cases/
-├── by-project/          # CANONICAL STORAGE - files stored here
+├── by-project/               # CANONICAL STORAGE - files stored here
 │   ├── document-handler-srv/
 │   │   └── 2025-10-13_LSFB-63055_description.md
 │   ├── api-gateway/
 │   └── ...
-├── by-date/             # VIEW: Symlinks organized by year/month
+├── by-date/                  # VIEW: Symlinks organized by year/month
 │   └── 2025/
 │       ├── 10/
 │       │   └── project_filename.md -> ../../../by-project/project/filename.md
 │       └── ...
-├── by-topic/            # VIEW: Symlinks organized by topic/feature
+├── by-topic/                 # VIEW: Symlinks organized by topic/feature
 │   ├── add-environment-parameter/
 │   │   └── project_filename.md -> ../../by-project/project/filename.md
 │   └── ...
+├── vscode-extension/         # VS Code extension for one-click documentation (NEW)
+│   ├── src/
+│   ├── package.json
+│   └── README.md
+├── document-ai-session.sh    # Interactive AI session documentor (NEW)
 ├── sync-ai-use-cases.sh      # Sync script (v2.0)
 ├── setup-project.sh          # Project setup script
+├── USAGE-GUIDE.md            # Detailed usage guide (NEW)
 └── git-hooks/
     └── post-commit           # Auto-sync git hook
 ```
@@ -51,6 +57,29 @@ cd /path/to/your-project
 # Sync specific project
 ~/Documents/ai-use-cases/sync-ai-use-cases.sh /path/to/project
 ```
+
+### Document AI Session (NEW)
+
+Automatically generate documentation for your AI-assisted coding sessions:
+
+**From Terminal:**
+```bash
+~/Documents/ai-use-cases/document-ai-session.sh
+```
+
+**From VS Code:**
+- Press `Ctrl+Alt+D` (or `Cmd+Alt+D` on Mac)
+- Command Palette → "Document AI Session"
+- GitHub Copilot Chat → `@workspace document my AI session`
+
+The script will:
+- 🔍 Collect git changes and session statistics
+- 💬 Guide you through interactive prompts
+- 📝 Generate documentation using the template
+- 💾 Save with proper naming convention
+- 🚀 Optionally commit and auto-sync
+
+See [USAGE-GUIDE.md](./USAGE-GUIDE.md) for detailed walkthrough.
 
 ## 📝 Use Case Document Format
 
@@ -298,4 +327,4 @@ If you want to share use cases across team members, consider:
 
 **Created:** 2025-10-14
 **Last Updated:** 2025-10-14
-**Version:** 2.0.0 (Symlink-based structure)
+**Version:** 2.1.0 (Added interactive AI session documentor + VS Code extension)

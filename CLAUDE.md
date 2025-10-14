@@ -39,6 +39,19 @@ Projects are configured to auto-sync their AI use case documentation using:
    - Automatically triggers sync script
    - Non-blocking - sync failures don't prevent commits
 
+4. **`document-ai-session.sh`**: Interactive AI session documentor (NEW)
+   - Guides you through documenting an AI-assisted coding session
+   - Captures git changes, file modifications, timestamps
+   - Auto-populates TEMPLATE.md with session data
+   - Can be triggered from shell or VS Code extension
+   - Integrates with existing sync workflow
+
+5. **VS Code Extension**: `vscode-extension/` (NEW)
+   - One-click documentation from VS Code
+   - Triggered via Command Palette or keyboard shortcut (Ctrl+Alt+D)
+   - Can be invoked from GitHub Copilot chat: `@workspace document my AI session`
+   - Wraps the document-ai-session.sh script
+
 ## File Naming Convention
 
 All use case documents MUST follow this pattern:
@@ -83,6 +96,29 @@ The sync script uses regex to parse filenames and organize symlinks accordingly.
 # Sync specific project
 ~/Documents/ai-use-cases/sync-ai-use-cases.sh /path/to/project
 ```
+
+### Documenting AI Sessions (NEW)
+
+**From Shell:**
+```bash
+# Interactive session documentor
+~/Documents/ai-use-cases/document-ai-session.sh
+
+# Or for specific project
+~/Documents/ai-use-cases/document-ai-session.sh /path/to/project
+```
+
+**From VS Code:**
+- Command Palette: `AI Session: Document AI Session`
+- Keyboard: `Ctrl+Alt+D` (or `Cmd+Alt+D` on Mac)
+- Copilot Chat: `@workspace document my AI session`
+
+**What it does:**
+- Collects git changes and session statistics
+- Guides you through interactive prompts
+- Generates documentation using TEMPLATE.md
+- Saves to `docs/ai-use-cases/` with proper naming
+- Optionally commits and syncs automatically
 
 ### Viewing Use Cases
 
@@ -152,15 +188,24 @@ The template emphasizes measurable outcomes, cost analysis, and knowledge transf
 
 ## Workflow for Creating New Use Cases
 
+**Option 1: Automated (Recommended)**
+1. Complete your AI-assisted coding session
+2. Run `~/Documents/ai-use-cases/document-ai-session.sh` (or use VS Code command)
+3. Follow interactive prompts
+4. Script generates documentation, commits, and syncs automatically
+
+**Option 2: Manual**
 1. Navigate to your project
 2. Create markdown file in `docs/ai-use-cases/` with proper naming
 3. Document your AI-assisted work using the template
 4. Commit the file with git
 5. Post-commit hook automatically syncs to central repository
-6. File appears in:
-   - `by-project/[project-name]/[filename].md` (actual file)
-   - `by-date/[year]/[month]/[project]_[filename].md` (symlink)
-   - `by-topic/[topic-slug]/[project]_[filename].md` (symlink)
+
+**Result (both options):**
+File appears in:
+- `by-project/[project-name]/[filename].md` (actual file)
+- `by-date/[year]/[month]/[project]_[filename].md` (symlink)
+- `by-topic/[topic-slug]/[project]_[filename].md` (symlink)
 
 ## Key Files
 
@@ -170,7 +215,9 @@ The template emphasizes measurable outcomes, cost analysis, and knowledge transf
 - **CHANGELOG.md**: Version history (v2.0 introduced symlink architecture)
 - **setup-project.sh**: Project configuration script
 - **sync-ai-use-cases.sh**: Synchronization script (v2.0)
+- **document-ai-session.sh**: Interactive AI session documentor (NEW)
 - **git-hooks/post-commit**: Hook template for auto-sync
+- **vscode-extension/**: VS Code extension for one-click documentation (NEW)
 
 ## Troubleshooting
 
