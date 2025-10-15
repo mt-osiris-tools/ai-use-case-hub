@@ -15,11 +15,11 @@ HOOK_SOURCE="$CENTRAL_DIR/git-hooks/post-commit"
 SYNC_SCRIPT="$CENTRAL_DIR/sync-ai-use-cases.sh"
 
 # Colors for output
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-BLUE='\033[0;34m'
-RED='\033[0;31m'
-NC='\033[0m' # No Color
+GREEN=$'\033[0;32m'
+YELLOW=$'\033[1;33m'
+BLUE=$'\033[0;34m'
+RED=$'\033[0;31m'
+NC=$'\033[0m' # No Color
 
 # Show help
 if [[ "$1" == "--help" ]] || [[ "$1" == "-h" ]]; then
