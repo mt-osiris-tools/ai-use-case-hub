@@ -21,6 +21,36 @@ RED='\033[0;31m'
 CYAN='\033[0;36m'
 NC='\033[0m'
 
+# Show help
+if [[ "$1" == "--help" ]] || [[ "$1" == "-h" ]]; then
+    echo "AI Session Documentor"
+    echo ""
+    echo "Usage:"
+    echo "  $0 [project_path]"
+    echo ""
+    echo "Description:"
+    echo "  Interactive tool to document AI-assisted coding sessions."
+    echo "  Captures git changes, guides you through prompts, and"
+    echo "  generates documentation using the template."
+    echo ""
+    echo "Arguments:"
+    echo "  project_path    Path to project directory (default: current directory)"
+    echo ""
+    echo "Examples:"
+    echo "  $0                        # Document session in current directory"
+    echo "  $0 /path/to/project       # Document session in specific project"
+    echo ""
+    echo "Workflow:"
+    echo "  1. Analyzes git changes and statistics"
+    echo "  2. Prompts for session details (ticket, description, AI tool used)"
+    echo "  3. Generates markdown documentation"
+    echo "  4. Optionally commits and syncs to central repository"
+    echo ""
+    echo "Options:"
+    echo "  -h, --help    Show this help message"
+    exit 0
+fi
+
 # Get project path
 PROJECT_PATH="${1:-$(pwd)}"
 

@@ -20,6 +20,30 @@ BLUE='\033[0;34m'
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 
+# Show help
+if [[ "$1" == "--help" ]] || [[ "$1" == "-h" ]]; then
+    echo "AI Use Cases Setup Script"
+    echo ""
+    echo "Usage:"
+    echo "  $0 [project_path]"
+    echo ""
+    echo "Description:"
+    echo "  Sets up AI use case documentation automation for a project."
+    echo "  Creates docs/ai-use-cases/ directory, installs git hook,"
+    echo "  and performs initial sync to central repository."
+    echo ""
+    echo "Arguments:"
+    echo "  project_path    Path to project directory (default: current directory)"
+    echo ""
+    echo "Examples:"
+    echo "  $0                        # Setup current directory"
+    echo "  $0 /path/to/project       # Setup specific project"
+    echo ""
+    echo "Options:"
+    echo "  -h, --help    Show this help message"
+    exit 0
+fi
+
 # Get project path (use provided argument or current directory)
 PROJECT_PATH="${1:-$(pwd)}"
 

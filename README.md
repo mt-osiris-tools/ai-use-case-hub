@@ -73,20 +73,23 @@ source ~/.zshrc
 #### 4. Verify Installation
 
 ```bash
-# Test that scripts are accessible
-~/Documents/ai-use-cases/setup-project.sh --help 2>/dev/null || echo "✓ Setup script found"
-~/Documents/ai-use-cases/document-ai-session.sh --help 2>/dev/null || echo "✓ Document script found"
+# Check that scripts are executable
+ls -l ~/Documents/ai-use-cases/*.sh
+
+# Test help flags
+~/Documents/ai-use-cases/setup-project.sh --help
+~/Documents/ai-use-cases/document-ai-session.sh --help
 
 # Check directory structure
 ls -la ~/Documents/ai-use-cases/
 ```
 
 You should see:
-- `setup-project.sh` (executable)
-- `sync-ai-use-cases.sh` (executable)
-- `document-ai-session.sh` (executable)
+- `setup-project.sh`, `sync-ai-use-cases.sh`, `document-ai-session.sh` (all with -rwxr-xr-x permissions)
 - `by-project/`, `by-date/`, `by-topic/` directories
 - `TEMPLATE.md`, `README.md`, etc.
+
+All scripts now support `--help` and `-h` flags for usage information.
 
 ### First Project Setup
 

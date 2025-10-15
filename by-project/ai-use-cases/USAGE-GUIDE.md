@@ -2,6 +2,68 @@
 
 Quick guide to documenting your AI-assisted coding sessions.
 
+## 🆕 First-Time Installation
+
+If you're new to this system, start here.
+
+### Step 1: Clone the Repository
+
+```bash
+# Clone to recommended location
+cd ~/Documents
+git clone https://github.com/james401/ai-use-case-hub-.git ai-use-cases
+cd ai-use-cases
+```
+
+### Step 2: Make Scripts Executable
+
+```bash
+chmod +x setup-project.sh sync-ai-use-cases.sh document-ai-session.sh
+```
+
+### Step 3: Verify Installation
+
+```bash
+# Check that everything is in place
+ls -l *.sh
+
+# You should see three executable scripts:
+# -rwxrwxr-x setup-project.sh
+# -rwxrwxr-x sync-ai-use-cases.sh
+# -rwxrwxr-x document-ai-session.sh
+```
+
+### Step 4: (Optional) Add to Shell Profile
+
+For easier access, add to your `~/.bashrc` or `~/.zshrc`:
+
+```bash
+# Add these lines
+export AI_USECASES_DIR="$HOME/Documents/ai-use-cases"
+export PATH="$AI_USECASES_DIR:$PATH"
+
+# Then reload
+source ~/.bashrc  # or source ~/.zshrc
+```
+
+Now you can use the scripts from anywhere!
+
+### Step 5: Test Installation
+
+```bash
+# Navigate to any git project
+cd /path/to/your/project
+
+# Run setup (this will configure the project)
+~/Documents/ai-use-cases/setup-project.sh
+
+# You should see success messages
+```
+
+Congratulations! You're ready to document AI sessions. 🎉
+
+---
+
 ## Quick Start
 
 ### 1. Setup Your Project (One-Time)

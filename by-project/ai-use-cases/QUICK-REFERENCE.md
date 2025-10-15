@@ -1,5 +1,28 @@
 # 🚀 AI Use Cases - Quick Reference
 
+## 🆕 First-Time Setup
+
+```bash
+# 1. Clone the repository
+cd ~/Documents
+git clone https://github.com/james401/ai-use-case-hub-.git ai-use-cases
+
+# 2. Make scripts executable
+cd ai-use-cases
+chmod +x *.sh
+
+# 3. Verify installation
+ls -l *.sh
+
+# 4. Set up your first project
+cd /path/to/your/project
+~/Documents/ai-use-cases/setup-project.sh
+```
+
+Done! Now you can document AI sessions.
+
+---
+
 ## Essential Commands
 
 ### Setup New Project

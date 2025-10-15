@@ -6,6 +6,56 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a **centralized documentation repository** for tracking AI-assisted development workflows across multiple software projects. It is NOT a code repository - it's a knowledge management system that uses a symlink-based architecture for efficient storage and multiple view patterns.
 
+## Onboarding for New Developers
+
+**If this repository is not yet installed on your machine**, follow these steps:
+
+### Step 1: Clone the Repository
+
+```bash
+cd ~/Documents
+git clone https://github.com/james401/ai-use-case-hub-.git ai-use-cases
+cd ai-use-cases
+```
+
+### Step 2: Make Scripts Executable
+
+```bash
+chmod +x setup-project.sh sync-ai-use-cases.sh document-ai-session.sh
+```
+
+### Step 3: Verify Installation
+
+```bash
+ls -l *.sh
+# Should show three executable scripts with -rwxr-xr-x permissions
+```
+
+### Step 4: (Optional) Configure Environment
+
+Add to `~/.bashrc` or `~/.zshrc` for easier access:
+
+```bash
+export AI_USECASES_DIR="$HOME/Documents/ai-use-cases"
+export PATH="$AI_USECASES_DIR:$PATH"
+```
+
+Then reload: `source ~/.bashrc` (or `source ~/.zshrc`)
+
+### Step 5: Set Up Your First Project
+
+```bash
+cd /path/to/your/project
+~/Documents/ai-use-cases/setup-project.sh
+```
+
+You'll see:
+- ✓ Created: docs/ai-use-cases/
+- ✓ Git post-commit hook installed
+- ✓ Sync complete!
+
+**You're now ready to document AI sessions!**
+
 ## Architecture Overview
 
 ### Storage Model: Canonical + Views

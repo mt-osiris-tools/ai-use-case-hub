@@ -22,6 +22,30 @@ RED='\033[0;31m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
+# Show help
+if [[ "$1" == "--help" ]] || [[ "$1" == "-h" ]]; then
+    echo "AI Use Cases Sync Script v2.0"
+    echo ""
+    echo "Usage:"
+    echo "  $0 [project_path]"
+    echo ""
+    echo "Description:"
+    echo "  Syncs AI use case documentation from project to central repository."
+    echo "  Files are stored in by-project/, with symlinks created in"
+    echo "  by-date/ and by-topic/ for alternate views."
+    echo ""
+    echo "Arguments:"
+    echo "  project_path    Path to project directory (default: current directory)"
+    echo ""
+    echo "Examples:"
+    echo "  $0                        # Sync current directory"
+    echo "  $0 /path/to/project       # Sync specific project"
+    echo ""
+    echo "Options:"
+    echo "  -h, --help    Show this help message"
+    exit 0
+fi
+
 # Get project path (use provided argument or current directory)
 PROJECT_PATH="${1:-$(pwd)}"
 
