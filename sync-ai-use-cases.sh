@@ -9,8 +9,9 @@
 
 set -e
 
-# Configuration
-CENTRAL_DIR="${AI_USECASES_DIR:-$HOME/Documents/ai-use-cases}"
+# Configuration - Auto-detect hub location
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CENTRAL_DIR="${AI_USECASES_DIR:-$SCRIPT_DIR}"
 BY_PROJECT_DIR="$CENTRAL_DIR/by-project"
 BY_DATE_DIR="$CENTRAL_DIR/by-date"
 BY_TOPIC_DIR="$CENTRAL_DIR/by-topic"
@@ -96,17 +97,37 @@ while IFS= read -r USE_CASE_DIR; do
         fi
 
         FILENAME=$(basename "$USE_CASE_FILE")
+
+        # Skip README files
+        if [[ "$FILENAME" == "README.md" ]]; then
+            continue
+        fi
+
+        # Validate filename convention (warn but don't fail)
+        if ! [[ "$FILENAME" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}_[A-Z]+-[0-9]+_.+\.md$ ]]; then
+            echo -e "${YELLOW}⚠ Warning${NC}: $FILENAME doesn't follow naming convention"
+            echo "  Expected: YYYY-MM-DD_TICKET-XXXXX_description.md"
+        fi
+
         TARGET_FILE="$BY_PROJECT_DIR/$PROJECT_NAME/$FILENAME"
 
         # Copy/update file in by-project (canonical storage)
         if [ ! -f "$TARGET_FILE" ]; then
-            cp "$USE_CASE_FILE" "$TARGET_FILE"
-            echo -e "${GREEN}✓ New${NC}: $FILENAME"
-            NEW_COUNT=$((NEW_COUNT + 1))
+            if cp "$USE_CASE_FILE" "$TARGET_FILE" 2>/dev/null; then
+                echo -e "${GREEN}✓ New${NC}: $FILENAME"
+                NEW_COUNT=$((NEW_COUNT + 1))
+            else
+                echo -e "${RED}✗ Failed to copy${NC}: $FILENAME"
+                continue
+            fi
         elif ! cmp -s "$USE_CASE_FILE" "$TARGET_FILE"; then
-            cp "$USE_CASE_FILE" "$TARGET_FILE"
-            echo -e "${BLUE}↻ Updated${NC}: $FILENAME"
-            UPDATED_COUNT=$((UPDATED_COUNT + 1))
+            if cp "$USE_CASE_FILE" "$TARGET_FILE" 2>/dev/null; then
+                echo -e "${BLUE}↻ Updated${NC}: $FILENAME"
+                UPDATED_COUNT=$((UPDATED_COUNT + 1))
+            else
+                echo -e "${RED}✗ Failed to update${NC}: $FILENAME"
+                continue
+            fi
         fi
 
         # Extract date from filename (format: YYYY-MM-DD)
@@ -121,10 +142,12 @@ while IFS= read -r USE_CASE_DIR; do
 
             # Create symlink (with project prefix to avoid name conflicts)
             SYMLINK_PATH="$DATE_DIR/${PROJECT_NAME}_${FILENAME}"
-            if [ ! -L "$SYMLINK_PATH" ]; then
+            if [ ! -L "$SYMLINK_PATH" ] || [ ! -e "$SYMLINK_PATH" ]; then
                 # Create relative symlink
-                REL_PATH=$(realpath --relative-to="$DATE_DIR" "$TARGET_FILE")
-                ln -sf "$REL_PATH" "$SYMLINK_PATH"
+                if REL_PATH=$(realpath --relative-to="$DATE_DIR" "$TARGET_FILE" 2>/dev/null); then
+                    ln -sf "$REL_PATH" "$SYMLINK_PATH" 2>/dev/null || \
+                        echo -e "${YELLOW}⚠ Warning${NC}: Failed to create date symlink for $FILENAME"
+                fi
             fi
         fi
 
@@ -140,10 +163,12 @@ while IFS= read -r USE_CASE_DIR; do
 
             # Create symlink (with project prefix to avoid name conflicts)
             SYMLINK_PATH="$TOPIC_DIR/${PROJECT_NAME}_${FILENAME}"
-            if [ ! -L "$SYMLINK_PATH" ]; then
+            if [ ! -L "$SYMLINK_PATH" ] || [ ! -e "$SYMLINK_PATH" ]; then
                 # Create relative symlink
-                REL_PATH=$(realpath --relative-to="$TOPIC_DIR" "$TARGET_FILE")
-                ln -sf "$REL_PATH" "$SYMLINK_PATH"
+                if REL_PATH=$(realpath --relative-to="$TOPIC_DIR" "$TARGET_FILE" 2>/dev/null); then
+                    ln -sf "$REL_PATH" "$SYMLINK_PATH" 2>/dev/null || \
+                        echo -e "${YELLOW}⚠ Warning${NC}: Failed to create topic symlink for $FILENAME"
+                fi
             fi
         fi
 

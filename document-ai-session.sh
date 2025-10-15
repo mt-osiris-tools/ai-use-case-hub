@@ -8,8 +8,9 @@
 
 set -e
 
-# Configuration
-CENTRAL_DIR="${AI_USECASES_DIR:-$HOME/Documents/ai-use-cases}"
+# Configuration - Auto-detect hub location
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CENTRAL_DIR="${AI_USECASES_DIR:-$SCRIPT_DIR}"
 TEMPLATE_FILE="$CENTRAL_DIR/TEMPLATE.md"
 SYNC_SCRIPT="$CENTRAL_DIR/sync-ai-use-cases.sh"
 
@@ -204,6 +205,7 @@ else
 fi
 
 # Generate documentation
+# TODO: Refactor to use TEMPLATE.md file with variable substitution instead of inline template
 cat > "$OUTPUT_FILE" <<EOF
 # 🎯 ${AI_TOOL}: ${BRIEF_DESC}
 

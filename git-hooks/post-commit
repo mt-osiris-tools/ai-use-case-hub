@@ -4,8 +4,14 @@
 #
 # This hook is triggered after a successful git commit
 
-# Configuration
-SYNC_SCRIPT="${AI_USECASES_SYNC_SCRIPT:-$HOME/Documents/ai-use-cases/sync-ai-use-cases.sh}"
+# Configuration - Try environment variable first, then common locations
+if [ -n "$AI_USECASES_SYNC_SCRIPT" ]; then
+    SYNC_SCRIPT="$AI_USECASES_SYNC_SCRIPT"
+elif [ -n "$AI_USECASES_DIR" ]; then
+    SYNC_SCRIPT="$AI_USECASES_DIR/sync-ai-use-cases.sh"
+else
+    SYNC_SCRIPT="$HOME/Documents/ai-use-cases/sync-ai-use-cases.sh"
+fi
 
 # Only sync if the sync script exists
 if [ ! -f "$SYNC_SCRIPT" ]; then

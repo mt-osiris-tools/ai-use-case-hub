@@ -8,8 +8,9 @@
 
 set -e
 
-# Configuration
-CENTRAL_DIR="${AI_USECASES_DIR:-$HOME/Documents/ai-use-cases}"
+# Configuration - Auto-detect hub location
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+CENTRAL_DIR="${AI_USECASES_DIR:-$SCRIPT_DIR}"
 HOOK_SOURCE="$CENTRAL_DIR/git-hooks/post-commit"
 SYNC_SCRIPT="$CENTRAL_DIR/sync-ai-use-cases.sh"
 

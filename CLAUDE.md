@@ -232,9 +232,9 @@ The template emphasizes measurable outcomes, cost analysis, and knowledge transf
    - Must include TICKET-XXXXX format
    - Must have descriptive slug after ticket
 
-3. **No git repository** - This directory is NOT initialized as a git repository. It's designed for local-only storage. Use cases are versioned in their original project repositories.
+3. **Hub infrastructure versioning** - This repository uses git for version control of the hub infrastructure itself (scripts, documentation, templates). The synced use case files in `by-project/`, `by-date/`, and `by-topic/` directories are NOT version controlled here (they're gitignored). Use cases are versioned in their original project repositories.
 
-4. **Script paths are absolute** - The hooks and scripts use absolute paths (e.g., `$HOME/Documents/ai-use-cases`). If this directory moves, projects need to be re-configured.
+4. **Script paths are configurable** - The scripts support the `AI_USECASES_DIR` environment variable to specify the hub location. If not set, they default to `$HOME/Documents/ai-use-cases` or auto-detect based on script location.
 
 ## Workflow for Creating New Use Cases
 

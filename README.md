@@ -2,6 +2,13 @@
 
 A centralized repository for documenting AI-assisted development workflows across all projects.
 
+## 📚 Documentation Guide
+
+**Choose your path:**
+- **New here?** → Start with [Getting Started](#-getting-started) below
+- **Need quick commands?** → See [QUICK-REFERENCE.md](./QUICK-REFERENCE.md)
+- **Using with AI assistants?** → See [CLAUDE.md](./CLAUDE.md)
+
 ## 📋 Table of Contents
 
 - [Getting Started](#-getting-started)
@@ -141,16 +148,19 @@ ai-use-cases/
 │   ├── add-environment-parameter/
 │   │   └── project_filename.md -> ../../by-project/project/filename.md
 │   └── ...
-├── vscode-extension/         # VS Code extension for one-click documentation (NEW)
+├── vscode-extension/         # VS Code extension for one-click documentation
 │   ├── src/
 │   ├── package.json
 │   └── README.md
-├── document-ai-session.sh    # Interactive AI session documentor (NEW)
+├── document-ai-session.sh    # Interactive AI session documentor
 ├── sync-ai-use-cases.sh      # Sync script (v2.0)
 ├── setup-project.sh          # Project setup script
-├── USAGE-GUIDE.md            # Detailed usage guide (NEW)
-└── git-hooks/
-    └── post-commit           # Auto-sync git hook
+├── git-hooks/
+│   └── post-commit           # Auto-sync git hook
+├── README.md                 # This file - main documentation
+├── QUICK-REFERENCE.md        # Fast command lookup
+├── CLAUDE.md                 # AI assistant instructions
+└── TEMPLATE.md               # Documentation template
 ```
 
 **💾 Storage Efficiency:** Files are stored once in `by-project/`. The `by-date/` and `by-topic/` directories contain symlinks for alternate views. This eliminates duplication while maintaining easy browsing.
@@ -199,8 +209,6 @@ The script will:
 - 📝 Generate documentation using the template
 - 💾 Save with proper naming convention
 - 🚀 Optionally commit and auto-sync
-
-See [USAGE-GUIDE.md](./USAGE-GUIDE.md) for detailed walkthrough.
 
 ## 📝 Use Case Document Format
 
