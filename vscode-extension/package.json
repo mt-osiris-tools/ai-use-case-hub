@@ -11,7 +11,10 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:aiSessionDocumentor.documentSession"
+    "onCommand:aiSessionDocumentor.documentSession",
+    "onCommand:aiSessionDocumentor.setupProject",
+    "onCommand:aiSessionDocumentor.syncUseCases",
+    "onCommand:aiSessionDocumentor.searchUseCases"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -19,17 +22,68 @@
       {
         "command": "aiSessionDocumentor.documentSession",
         "title": "Document AI Session",
-        "category": "AI Session"
+        "category": "AI Use Cases",
+        "icon": "$(notebook)"
+      },
+      {
+        "command": "aiSessionDocumentor.setupProject",
+        "title": "Setup Project for AI Use Cases",
+        "category": "AI Use Cases",
+        "icon": "$(gear)"
+      },
+      {
+        "command": "aiSessionDocumentor.syncUseCases",
+        "title": "Sync AI Use Cases to Hub",
+        "category": "AI Use Cases",
+        "icon": "$(sync)"
+      },
+      {
+        "command": "aiSessionDocumentor.searchUseCases",
+        "title": "Search AI Use Cases",
+        "category": "AI Use Cases",
+        "icon": "$(search)"
+      },
+      {
+        "command": "aiSessionDocumentor.viewInHub",
+        "title": "View Use Cases in Hub",
+        "category": "AI Use Cases",
+        "icon": "$(folder-opened)"
       }
     ],
     "keybindings": [
       {
         "command": "aiSessionDocumentor.documentSession",
         "key": "ctrl+alt+d",
-        "mac": "cmd+alt+d",
-        "when": "editorTextFocus"
+        "mac": "cmd+alt+d"
+      },
+      {
+        "command": "aiSessionDocumentor.searchUseCases",
+        "key": "ctrl+alt+s",
+        "mac": "cmd+alt+s"
       }
     ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "aiSessionDocumentor.documentSession",
+          "when": "workspaceFolderCount > 0"
+        },
+        {
+          "command": "aiSessionDocumentor.setupProject",
+          "when": "workspaceFolderCount > 0"
+        },
+        {
+          "command": "aiSessionDocumentor.syncUseCases",
+          "when": "workspaceFolderCount > 0"
+        },
+        {
+          "command": "aiSessionDocumentor.searchUseCases"
+        },
+        {
+          "command": "aiSessionDocumentor.viewInHub"
+        }
+      ]
+    },
     "configuration": {
       "title": "AI Session Documentor",
       "properties": {
@@ -52,6 +106,22 @@
           "type": "boolean",
           "default": false,
           "description": "Automatically commit the generated documentation"
+        },
+        "aiSessionDocumentor.hubPath": {
+          "type": "string",
+          "default": "~/Documents/ai-use-case-hub",
+          "description": "Path to the AI Use Cases Hub repository"
+        },
+        "aiSessionDocumentor.defaultAiTool": {
+          "type": "string",
+          "default": "Claude Code (Sonnet 4.5)",
+          "enum": [
+            "Claude Code (Sonnet 4.5)",
+            "GitHub Copilot",
+            "Claude Code + GitHub Copilot",
+            "Other"
+          ],
+          "description": "Default AI tool to use in documentation"
         }
       }
     }

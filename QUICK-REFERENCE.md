@@ -1,5 +1,36 @@
 # 🚀 AI Use Cases - Quick Reference
 
+## 🤖 For Claude Code Users
+
+**Slash Commands** (use in Claude Code chat):
+```
+/document-session    Document your AI-assisted session
+/setup-project       Setup current project
+/sync-usecases       Manual sync to hub
+/search-usecases     Search all use cases
+/quick-start         Complete setup guide
+```
+
+## 💻 For GitHub Copilot / VS Code Users
+
+**Keyboard Shortcuts:**
+- `Ctrl+Alt+D` / `Cmd+Alt+D` - Document AI Session
+- `Ctrl+Alt+S` / `Cmd+Alt+S` - Search Use Cases
+
+**Command Palette** (`Ctrl/Cmd+Shift+P`):
+- AI Use Cases: Document AI Session
+- AI Use Cases: Setup Project for AI Use Cases
+- AI Use Cases: Sync AI Use Cases to Hub
+- AI Use Cases: Search AI Use Cases
+- AI Use Cases: View Use Cases in Hub
+
+**Copilot Chat:**
+```
+@workspace document my AI session
+```
+
+---
+
 ## 🆕 First-Time Setup
 
 ```bash

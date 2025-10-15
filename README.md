@@ -6,12 +6,16 @@ A centralized repository for documenting AI-assisted development workflows acros
 
 **Choose your path:**
 - **New here?** → Start with [Getting Started](#-getting-started) below
+- **Using Claude Code?** → See [Using with Claude Code](#-using-with-claude-code)
+- **Using GitHub Copilot?** → See [Using with GitHub Copilot](#-using-with-github-copilot)
 - **Need quick commands?** → See [QUICK-REFERENCE.md](./QUICK-REFERENCE.md)
-- **Using with AI assistants?** → See [CLAUDE.md](./CLAUDE.md)
+- **AI assistant instructions?** → See [CLAUDE.md](./CLAUDE.md)
 
 ## 📋 Table of Contents
 
 - [Getting Started](#-getting-started)
+- [Using with Claude Code](#-using-with-claude-code)
+- [Using with GitHub Copilot](#-using-with-github-copilot)
 - [Quick Start](#-quick-start)
 - [Directory Structure](#-directory-structure)
 - [How It Works](#-how-it-works)
@@ -164,6 +168,107 @@ ai-use-cases/
 ```
 
 **💾 Storage Efficiency:** Files are stored once in `by-project/`. The `by-date/` and `by-topic/` directories contain symlinks for alternate views. This eliminates duplication while maintaining easy browsing.
+
+## 🤖 Using with Claude Code
+
+This repository is optimized for use with Claude Code! Custom slash commands make documentation effortless.
+
+### Available Claude Code Commands
+
+Once you're in a project with Claude Code, use these commands:
+
+- **`/document-session`** - Document your completed AI session
+  - Automatically captures git changes
+  - Prompts for session details
+  - Generates formatted documentation
+  - Optionally commits and syncs
+
+- **`/setup-project`** - Setup current project for use cases
+  - Creates required directories
+  - Installs git hooks
+  - Performs initial sync
+
+- **`/sync-usecases`** - Manually sync use cases to hub
+  - Copies files to central repository
+  - Creates symlinks by date and topic
+
+- **`/search-usecases`** - Search across all use cases
+  - Find by keyword, topic, or technology
+  - Search file names or content
+  - Show results from all projects
+
+- **`/quick-start`** - Complete setup guide
+  - First-time installation walkthrough
+  - Project setup assistance
+  - Documentation tutorial
+
+### Typical Claude Code Workflow
+
+1. Work on your code with Claude
+2. Commit your changes
+3. Type `/document-session` in Claude chat
+4. Claude helps you fill in the documentation
+5. Files automatically sync to central hub
+6. Use `/search-usecases` to find similar past work
+
+### Benefits for Claude Code Users
+
+- **Context Retention**: Claude can read past use cases to learn your patterns
+- **Automated Documentation**: Let Claude help write the documentation
+- **Pattern Recognition**: Claude can identify reusable approaches
+- **Knowledge Base**: Build a searchable library of AI-assisted work
+
+## 💻 Using with GitHub Copilot
+
+Works seamlessly with GitHub Copilot in VS Code!
+
+### VS Code Extension
+
+Install and use the AI Session Documentor extension:
+
+**Available Commands** (Command Palette or keyboard shortcuts):
+- `Ctrl+Alt+D` / `Cmd+Alt+D` - Document AI Session
+- `Ctrl+Alt+S` / `Cmd+Alt+S` - Search Use Cases
+- "AI Use Cases: Setup Project" - First-time setup
+- "AI Use Cases: Sync" - Manual sync
+- "AI Use Cases: View in Hub" - Open hub in file explorer
+
+### Copilot Chat Integration
+
+You can also use Copilot Chat:
+
+```
+@workspace document my AI session
+```
+
+Copilot will guide you through the documentation process.
+
+### Typical Copilot Workflow
+
+1. Code with Copilot inline suggestions and chat
+2. Accept/reject suggestions as you work
+3. Commit your changes
+4. Press `Ctrl+Alt+D` to document
+5. Fill in prompts (or let Copilot help!)
+6. Specify which features you used (inline, chat, etc.)
+
+### Benefits for Copilot Users
+
+- **Track Effectiveness**: Document which suggestions worked best
+- **Pattern Library**: Build a collection of effective prompts
+- **Team Sharing**: Show teammates what Copilot patterns work
+- **ROI Measurement**: Track time saved using Copilot
+
+### Using Both Tools Together
+
+Many developers use Claude Code for complex refactoring and Copilot for day-to-day coding:
+
+1. Use Copilot for boilerplate and suggestions
+2. Use Claude Code for architecture and complex changes
+3. Document with `Ctrl+Alt+D` or `/document-session`
+4. Select "Claude Code + GitHub Copilot" as the tool
+5. Describe how each tool contributed
+6. Build insights on when to use which tool
 
 ## 🚀 Quick Start
 
