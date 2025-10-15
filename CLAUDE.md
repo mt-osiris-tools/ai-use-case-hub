@@ -6,13 +6,13 @@ This file provides guidance to Claude Code (claude.ai/code) when working with th
 
 This is the **AI Use Case Documentation Hub** - a centralized storage location for AI-assisted development workflow documentation across all your projects. It uses a symlink-based architecture to provide multiple organizational views without file duplication.
 
-**Important**: This repository contains **documentation only**. The CLI tools for managing this hub are in a separate repository: [ai-use-case-cli](https://github.com/james401/ai-use-case-cli)
+**Important**: This repository contains **documentation only**. The CLI tools for managing this hub are in a separate repository: [ai-use-case-cli](https://github.com/mt-osiris-tools/ai-use-case-cli)
 
 ## Architecture Overview
 
 The AI Use Case system consists of two repositories:
 
-1. **[ai-use-case-cli](https://github.com/james401/ai-use-case-cli)** - Command-line tools for:
+1. **[ai-use-case-cli](https://github.com/mt-osiris-tools/ai-use-case-cli)** - Command-line tools for:
    - Setting up projects (`ai-use-case --init`)
    - Documenting sessions (`ai-use-case document`)
    - Syncing to hub (`ai-use-case sync`)
@@ -35,16 +35,16 @@ The AI Use Case system consists of two repositories:
 ### Step 1: Install the CLI Tools
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/james401/ai-use-case-cli/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/mt-osiris-tools/ai-use-case-cli/main/install.sh | bash
 ```
 
-See the [CLI documentation](https://github.com/james401/ai-use-case-cli) for details.
+See the [CLI documentation](https://github.com/mt-osiris-tools/ai-use-case-cli) for details.
 
 ### Step 2: Clone This Documentation Hub
 
 ```bash
 cd ~/Documents
-git clone https://github.com/james401/ai-use-case-hub.git ai-use-case-hub
+git clone https://github.com/mt-osiris-tools/ai-use-case-hub.git ai-use-case-hub
 ```
 
 The CLI tools will automatically use this location (default: `~/Documents/ai-use-case-hub`).
@@ -92,7 +92,7 @@ The sync script (in CLI repo) uses regex to parse filenames and organize symlink
 
 ## Common Commands
 
-All commands use the CLI tool. See [ai-use-case-cli](https://github.com/james401/ai-use-case-cli) for full documentation.
+All commands use the CLI tool. See [ai-use-case-cli](https://github.com/mt-osiris-tools/ai-use-case-cli) for full documentation.
 
 ### Setting Up a New Project
 
@@ -314,8 +314,8 @@ Each demonstrates:
 
 ## Related Resources
 
-- **CLI Tools**: https://github.com/james401/ai-use-case-cli
-- **Hub Repository**: https://github.com/james401/ai-use-case-hub (this repo)
+- **CLI Tools**: https://github.com/mt-osiris-tools/ai-use-case-cli
+- **Hub Repository**: https://github.com/mt-osiris-tools/ai-use-case-hub (this repo)
 - **Template**: `TEMPLATE.md` in this repository
 - **Quick Reference**: `QUICK-REFERENCE.md` in this repository
 

@@ -2,7 +2,7 @@
 
 **Date:** 2025-10-14
 **Repository/Project:** ai-use-case-hub
-**Ticket:** [HUB-001](https://github.com/james401/ai-use-case-hub/issues/1)
+**Ticket:** [HUB-001](https://github.com/mt-osiris-tools/ai-use-case-hub/issues/1)
 **Agent Used:** Claude Code (Sonnet 4.5)
 **Complexity:** Low
 **Time Saved:** ~0.5 hours vs manual approach

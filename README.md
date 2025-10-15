@@ -10,7 +10,7 @@ This repository serves as the documentation hub - a centralized storage location
 
 The AI Use Case system consists of two repositories:
 
-- **[ai-use-case-cli](https://github.com/james401/ai-use-case-cli)** - Command-line tools for managing and documenting use cases
+- **[ai-use-case-cli](https://github.com/mt-osiris-tools/ai-use-case-cli)** - Command-line tools for managing and documenting use cases
 - **ai-use-case-hub** (this repo) - Central storage for all documentation
 
 ## Getting Started
@@ -20,10 +20,10 @@ The AI Use Case system consists of two repositories:
 First, install the CLI tools that will populate this hub:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/james401/ai-use-case-cli/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/mt-osiris-tools/ai-use-case-cli/main/install.sh | bash
 ```
 
-See the [CLI documentation](https://github.com/james401/ai-use-case-cli) for detailed installation instructions.
+See the [CLI documentation](https://github.com/mt-osiris-tools/ai-use-case-cli) for detailed installation instructions.
 
 ### 2. Clone This Hub
 
@@ -31,7 +31,7 @@ Clone this repository to serve as your documentation hub:
 
 ```bash
 cd ~/Documents
-git clone https://github.com/james401/ai-use-case-hub.git ai-use-case-hub
+git clone https://github.com/mt-osiris-tools/ai-use-case-hub.git ai-use-case-hub
 ```
 
 ### 3. Setup Your Projects
@@ -270,7 +270,7 @@ Each example demonstrates the template structure and documentation best practice
 
 ## Related Resources
 
-- **CLI Tools**: [ai-use-case-cli](https://github.com/james401/ai-use-case-cli)
+- **CLI Tools**: [ai-use-case-cli](https://github.com/mt-osiris-tools/ai-use-case-cli)
 - **Quick Reference**: [QUICK-REFERENCE.md](./QUICK-REFERENCE.md)
 - **Template**: [TEMPLATE.md](./TEMPLATE.md)
 - **Changelog**: [CHANGELOG.md](./CHANGELOG.md)
@@ -291,9 +291,9 @@ If sharing across teams:
 
 ## Support
 
-- **CLI Issues**: [ai-use-case-cli Issues](https://github.com/james401/ai-use-case-cli/issues)
-- **Hub Issues**: [ai-use-case-hub Issues](https://github.com/james401/ai-use-case-hub/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/james401/ai-use-case-hub/discussions)
+- **CLI Issues**: [ai-use-case-cli Issues](https://github.com/mt-osiris-tools/ai-use-case-cli/issues)
+- **Hub Issues**: [ai-use-case-hub Issues](https://github.com/mt-osiris-tools/ai-use-case-hub/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/mt-osiris-tools/ai-use-case-hub/discussions)
 
 ---
 

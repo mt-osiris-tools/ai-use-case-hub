@@ -37,13 +37,13 @@ ai-use-case --help              # Show all commands
 
 **Step 1: Install CLI Tools**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/james401/ai-use-case-cli/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/mt-osiris-tools/ai-use-case-cli/main/install.sh | bash
 ```
 
 **Step 2: Clone Documentation Hub (Optional)**
 ```bash
 cd ~/Documents
-git clone https://github.com/james401/ai-use-case-hub.git ai-use-case-hub
+git clone https://github.com/mt-osiris-tools/ai-use-case-hub.git ai-use-case-hub
 ```
 
 **Step 3: Setup Your First Project**
@@ -265,8 +265,8 @@ Add to `~/.bashrc` or `~/.zshrc` and reload with `source ~/.bashrc`
 - **Full Documentation**: [README.md](./README.md)
 - **Template**: [TEMPLATE.md](./TEMPLATE.md)
 - **Claude Code Instructions**: [CLAUDE.md](./CLAUDE.md)
-- **CLI Repository**: https://github.com/james401/ai-use-case-cli
-- **Hub Repository**: https://github.com/james401/ai-use-case-hub
+- **CLI Repository**: https://github.com/mt-osiris-tools/ai-use-case-cli
+- **Hub Repository**: https://github.com/mt-osiris-tools/ai-use-case-hub
 
 ---
 
