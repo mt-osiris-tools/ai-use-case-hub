@@ -45,73 +45,50 @@ Before installing, ensure you have:
 
 ### Installation
 
-#### 1. Clone the Repository
+**Quick Install (Recommended):**
 
 ```bash
-# Clone to your home directory (recommended location)
-cd ~/Documents
-git clone https://github.com/james401/ai-use-case-hub-.git ai-use-cases
-
-# Or clone to a custom location
-git clone https://github.com/james401/ai-use-case-hub-.git /path/to/custom/location
+curl -fsSL https://raw.githubusercontent.com/james401/ai-use-case-hub-/main/install.sh | bash
 ```
 
-#### 2. Make Scripts Executable
+This will:
+- Clone the repository to `~/Documents/ai-use-case-hub`
+- Make all scripts executable
+- Create `ai-use-case` command available globally
+- Add to your PATH automatically
+- Offer to configure your shell profile
+
+**Manual Installation:**
 
 ```bash
-cd ~/Documents/ai-use-cases
-chmod +x setup-project.sh
-chmod +x sync-ai-use-cases.sh
-chmod +x document-ai-session.sh
+git clone https://github.com/james401/ai-use-case-hub-.git ~/Documents/ai-use-case-hub
+cd ~/Documents/ai-use-case-hub
+./install.sh
 ```
 
-#### 3. (Optional) Add to PATH
-
-For easier access from anywhere, add to your shell profile:
+**Verify Installation:**
 
 ```bash
-# For bash users - add to ~/.bashrc
-echo 'export AI_USECASES_DIR="$HOME/Documents/ai-use-cases"' >> ~/.bashrc
-echo 'export PATH="$AI_USECASES_DIR:$PATH"' >> ~/.bashrc
-source ~/.bashrc
+# Test the CLI tool
+ai-use-case --version
+ai-use-case --help
 
-# For zsh users - add to ~/.zshrc
-echo 'export AI_USECASES_DIR="$HOME/Documents/ai-use-cases"' >> ~/.zshrc
-echo 'export PATH="$AI_USECASES_DIR:$PATH"' >> ~/.zshrc
-source ~/.zshrc
+# Check installation
+which ai-use-case
 ```
 
-#### 4. Verify Installation
-
-```bash
-# Check that scripts are executable
-ls -l ~/Documents/ai-use-cases/*.sh
-
-# Test help flags
-~/Documents/ai-use-cases/setup-project.sh --help
-~/Documents/ai-use-cases/document-ai-session.sh --help
-
-# Check directory structure
-ls -la ~/Documents/ai-use-cases/
-```
-
-You should see:
-- `setup-project.sh`, `sync-ai-use-cases.sh`, `document-ai-session.sh` (all with -rwxr-xr-x permissions)
-- `by-project/`, `by-date/`, `by-topic/` directories
-- `TEMPLATE.md`, `README.md`, etc.
-
-All scripts now support `--help` and `-h` flags for usage information.
+You should see the `ai-use-case` command available system-wide.
 
 ### First Project Setup
 
-Now that the central repository is installed, set up your first project:
+After installation, set up your first project:
 
 ```bash
 # Navigate to your project
 cd /path/to/your-project
 
-# Run the setup script
-~/Documents/ai-use-cases/setup-project.sh
+# Setup with the CLI
+ai-use-case --init
 
 # You should see:
 # ✓ Created: docs/ai-use-cases/
@@ -129,7 +106,7 @@ Document a test session:
 cd /path/to/your-project
 
 # Run the interactive documentor
-~/Documents/ai-use-cases/document-ai-session.sh
+ai-use-case document
 
 # Follow the prompts to create your first use case documentation
 ```

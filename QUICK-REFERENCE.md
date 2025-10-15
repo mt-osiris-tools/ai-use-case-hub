@@ -1,5 +1,18 @@
 # 🚀 AI Use Cases - Quick Reference
 
+## ⚡ Unified CLI (Simplest!)
+
+After installation, use these commands anywhere:
+
+```bash
+ai-use-case --init              # Setup current project
+ai-use-case document            # Document AI session
+ai-use-case sync                # Sync to hub
+ai-use-case search <term>       # Search use cases
+ai-use-case stats               # View statistics
+ai-use-case --help              # Show all commands
+```
+
 ## 🤖 For Claude Code Users
 
 **Slash Commands** (use in Claude Code chat):
@@ -33,24 +46,25 @@
 
 ## 🆕 First-Time Setup
 
+**One-command install:**
 ```bash
-# 1. Clone the repository
-cd ~/Documents
-git clone https://github.com/james401/ai-use-case-hub-.git ai-use-cases
-
-# 2. Make scripts executable
-cd ai-use-cases
-chmod +x *.sh
-
-# 3. Verify installation
-ls -l *.sh
-
-# 4. Set up your first project
-cd /path/to/your/project
-~/Documents/ai-use-cases/setup-project.sh
+curl -fsSL https://raw.githubusercontent.com/james401/ai-use-case-hub-/main/install.sh | bash
 ```
 
-Done! Now you can document AI sessions.
+**Or manual install:**
+```bash
+git clone https://github.com/james401/ai-use-case-hub-.git ~/Documents/ai-use-case-hub
+cd ~/Documents/ai-use-case-hub
+./install.sh
+```
+
+**Then setup your first project:**
+```bash
+cd /path/to/your/project
+ai-use-case --init
+```
+
+Done! Now you can use `ai-use-case document` anytime.
 
 ---
 
@@ -58,16 +72,32 @@ Done! Now you can document AI sessions.
 
 ### Setup New Project
 ```bash
-~/Documents/ai-use-cases/setup-project.sh
+ai-use-case --init
 # Or for specific project:
-~/Documents/ai-use-cases/setup-project.sh /path/to/project
+ai-use-case --init /path/to/project
+```
+
+### Document AI Session
+```bash
+ai-use-case document
 ```
 
 ### Manual Sync
 ```bash
-~/Documents/ai-use-cases/sync-ai-use-cases.sh
+ai-use-case sync
 # Or for specific project:
-~/Documents/ai-use-cases/sync-ai-use-cases.sh /path/to/project
+ai-use-case sync /path/to/project
+```
+
+### Search Use Cases
+```bash
+ai-use-case search authentication
+ai-use-case search "react hooks"
+```
+
+### View Statistics
+```bash
+ai-use-case stats
 ```
 
 ## File Naming Convention
