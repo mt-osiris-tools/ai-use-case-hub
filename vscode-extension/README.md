@@ -19,8 +19,8 @@ Document your AI-assisted coding sessions with one command. Works seamlessly wit
 
 1. Clone the ai-use-cases repository:
    ```bash
-   git clone https://github.com/james401/ai-use-case-hub-.git
-   cd ai-use-case-hub-/vscode-extension
+   git clone https://github.com/james401/ai-use-case-hub.git
+   cd ai-use-case-hub/vscode-extension
    ```
 
 2. Install dependencies:
@@ -46,7 +46,7 @@ Document your AI-assisted coding sessions with one command. Works seamlessly wit
 
 1. Ensure you have the ai-use-cases repository set up:
    ```bash
-   git clone https://github.com/james401/ai-use-case-hub-.git ~/Documents/ai-use-cases
+   git clone https://github.com/james401/ai-use-case-hub.git ~/Documents/ai-use-cases
    ```
 
 2. Set up your project with ai-use-cases:
@@ -122,7 +122,7 @@ Generated documents follow a comprehensive template including:
 
 ## Integration with AI Use Cases Hub
 
-This extension integrates with the [AI Use Cases Hub](https://github.com/james401/ai-use-case-hub-) system:
+This extension integrates with the [AI Use Cases Hub](https://github.com/james401/ai-use-case-hub) system:
 
 1. Documents are saved to `docs/ai-use-cases/` in your project
 2. Post-commit hook automatically syncs to central repository
@@ -163,8 +163,8 @@ To contribute or modify this extension:
 
 ```bash
 # Clone and install
-git clone https://github.com/james401/ai-use-case-hub-.git
-cd ai-use-case-hub-/vscode-extension
+git clone https://github.com/james401/ai-use-case-hub.git
+cd ai-use-case-hub/vscode-extension
 npm install
 
 # Watch mode for development
@@ -184,6 +184,6 @@ MIT
 
 ## Links
 
-- [GitHub Repository](https://github.com/james401/ai-use-case-hub-)
-- [Documentation](https://github.com/james401/ai-use-case-hub-/blob/main/README.md)
-- [Issue Tracker](https://github.com/james401/ai-use-case-hub-/issues)
+- [GitHub Repository](https://github.com/james401/ai-use-case-hub)
+- [Documentation](https://github.com/james401/ai-use-case-hub/blob/main/README.md)
+- [Issue Tracker](https://github.com/james401/ai-use-case-hub/issues)

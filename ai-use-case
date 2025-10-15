@@ -71,7 +71,7 @@ ${YELLOW}Hub Location:${NC}
 ${YELLOW}More Info:${NC}
   README:          $HUB_DIR/README.md
   Quick Reference: $HUB_DIR/QUICK-REFERENCE.md
-  Repository:      https://github.com/james401/ai-use-case-hub-
+  Repository:      https://github.com/james401/ai-use-case-hub
 
 EOF
 }

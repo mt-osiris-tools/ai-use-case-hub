@@ -2,10 +2,10 @@
 # AI Use Case Hub - Installation Script
 #
 # Quick install:
-#   curl -fsSL https://raw.githubusercontent.com/james401/ai-use-case-hub-/main/install.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/james401/ai-use-case-hub/main/install.sh | bash
 #
 # Or manual:
-#   git clone https://github.com/james401/ai-use-case-hub-.git ~/Documents/ai-use-case-hub
+#   git clone https://github.com/james401/ai-use-case-hub.git ~/Documents/ai-use-case-hub
 #   cd ~/Documents/ai-use-case-hub
 #   ./install.sh
 
@@ -51,7 +51,7 @@ else
     fi
 
     echo -e "${CYAN}Cloning repository...${NC}"
-    git clone https://github.com/james401/ai-use-case-hub-.git "$INSTALL_DIR"
+    git clone https://github.com/james401/ai-use-case-hub.git "$INSTALL_DIR"
     cd "$INSTALL_DIR"
 fi
 

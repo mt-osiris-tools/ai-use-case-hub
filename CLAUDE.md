@@ -14,7 +14,7 @@ This is a **centralized documentation repository** for tracking AI-assisted deve
 
 ```bash
 cd ~/Documents
-git clone https://github.com/james401/ai-use-case-hub-.git ai-use-cases
+git clone https://github.com/james401/ai-use-case-hub.git ai-use-cases
 cd ai-use-cases
 ```
 

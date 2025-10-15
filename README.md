@@ -48,7 +48,7 @@ Before installing, ensure you have:
 **Quick Install (Recommended):**
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/james401/ai-use-case-hub-/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/james401/ai-use-case-hub/main/install.sh | bash
 ```
 
 This will:
@@ -61,7 +61,7 @@ This will:
 **Manual Installation:**
 
 ```bash
-git clone https://github.com/james401/ai-use-case-hub-.git ~/Documents/ai-use-case-hub
+git clone https://github.com/james401/ai-use-case-hub.git ~/Documents/ai-use-case-hub
 cd ~/Documents/ai-use-case-hub
 ./install.sh
 ```

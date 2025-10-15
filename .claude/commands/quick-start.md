@@ -18,7 +18,7 @@ ls -la ~/Documents/ai-use-case-hub 2>/dev/null && echo "✅ Hub installed" || ec
 
 ```bash
 cd ~/Documents
-git clone https://github.com/james401/ai-use-case-hub-.git ai-use-case-hub
+git clone https://github.com/james401/ai-use-case-hub.git ai-use-case-hub
 cd ai-use-case-hub
 ```
 

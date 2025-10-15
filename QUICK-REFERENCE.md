@@ -48,12 +48,12 @@ ai-use-case --help              # Show all commands
 
 **One-command install:**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/james401/ai-use-case-hub-/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/james401/ai-use-case-hub/main/install.sh | bash
 ```
 
 **Or manual install:**
 ```bash
-git clone https://github.com/james401/ai-use-case-hub-.git ~/Documents/ai-use-case-hub
+git clone https://github.com/james401/ai-use-case-hub.git ~/Documents/ai-use-case-hub
 cd ~/Documents/ai-use-case-hub
 ./install.sh
 ```
