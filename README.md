@@ -81,7 +81,8 @@ ai-use-case-hub/
 ├── docs/                     # Example use cases
 │   └── ai-use-cases/
 │
-├── TEMPLATE.md               # Use case documentation template
+├── TEMPLATE.md               # Implementation session template (🎯)
+├── TEMPLATE-RESEARCH.md      # Research session template (🔬)
 ├── CHANGELOG.md              # Version history
 ├── QUICK-REFERENCE.md        # Quick command reference
 └── README.md                 # This file
@@ -102,15 +103,53 @@ ai-use-case-hub/
 3. **Auto-Sync**: Git post-commit hook automatically syncs to this hub
 4. **Organize**: Hub organizes docs by project, date, and topic using symlinks
 
+### Session Types
+
+The system supports two types of AI-assisted sessions:
+
+#### 🎯 Implementation Sessions (Code Changes)
+For sessions that involve actual code modifications:
+- Requires git commits and file changes
+- Captures git statistics (files changed, lines added/removed)
+- Includes code snippets and technical implementation details
+- Uses project-specific tickets (e.g., `PROJ-1234`, `HUB-001`)
+- **Template**: `TEMPLATE.md`
+
+**Use for:**
+- Implementing new features
+- Fixing bugs
+- Refactoring code
+- Writing tests
+
+#### 🔬 Research Sessions (Exploration)
+For exploratory sessions without code changes:
+- No git commits required
+- Documents query refinement and decision-making
+- Captures insights, approaches evaluated, and recommendations
+- Uses `RESEARCH-XXX` tickets (auto-generated)
+- **Template**: `TEMPLATE-RESEARCH.md`
+
+**Use for:**
+- Exploring architectural approaches
+- Evaluating multiple technical solutions
+- Making technology or design decisions
+- Understanding existing codebases
+- Investigating issues before implementing fixes
+- Back-and-forth conversations to refine complex queries
+
 ### File Naming Convention
 
 ```
 YYYY-MM-DD_TICKET-XXXXX_brief-description.md
 ```
 
-**Examples:**
+**Implementation Session Examples:**
 - `2025-10-14_PROJ-1234_implement-user-authentication.md`
 - `2025-10-15_BUG-567_fix-database-connection-timeout.md`
+
+**Research Session Examples:**
+- `2025-10-20_RESEARCH-001_evaluate-database-migration-strategies.md`
+- `2025-10-20_RESEARCH-002_compare-authentication-approaches.md`
 
 The naming convention enables automatic organization:
 - **Date** (`YYYY-MM-DD`) → Creates symlinks in `by-date/YYYY/MM/`

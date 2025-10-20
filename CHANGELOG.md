@@ -1,5 +1,46 @@
 # Changelog
 
+## Version 2.1.0 - 2025-10-20
+
+### 🔬 Research Session Support
+
+**Added:** Support for research and exploratory AI sessions without code changes
+
+#### New Features
+- **TEMPLATE-RESEARCH.md**: Comprehensive template for documenting research sessions
+  - Research context and initial query documentation
+  - Query evolution tracking through iterations
+  - Key insights discovered section
+  - Approaches evaluated with pros/cons
+  - Final decision and recommendation documentation
+  - Research impact and replicability framework
+- **RESEARCH-XXX ticket format**: Auto-generated ticket numbering for research sessions
+- **Session type documentation**: Clear guidance on when to use each template
+
+#### Documentation Updates
+- **README.md**: Added "Session Types" section explaining implementation vs research sessions
+- **README.md**: Updated file naming examples to include RESEARCH-XXX format
+- **README.md**: Updated directory structure to show both templates
+- **QUICK-REFERENCE.md**: Added research session workflow and commands
+
+#### Use Cases
+Research sessions are ideal for:
+- Exploring architectural approaches
+- Evaluating multiple technical solutions
+- Making technology or design decisions
+- Understanding existing codebases without modifications
+- Investigating issues before implementing fixes
+- Back-and-forth conversations to refine complex queries
+
+#### CLI Integration
+This hub update works with **CLI v2.2.0** which includes:
+- Automatic session type detection
+- Research-specific template generation
+- RESEARCH-XXX ticket auto-generation
+- Race condition protection for concurrent research sessions
+
+---
+
 ## Version 2.0.0 - 2025-10-14
 
 ### 🚀 Major Improvement: Symlink-Based Structure

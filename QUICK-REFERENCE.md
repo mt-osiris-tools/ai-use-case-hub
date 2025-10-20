@@ -66,8 +66,20 @@ ai-use-case --init /path/to/project
 ```
 
 ### Document AI Session
+
+**Implementation Session** (with code changes):
 ```bash
 ai-use-case document
+# Select "1) Implementation" when prompted
+# Uses PROJ-XXX or HUB-XXX ticket format
+```
+
+**Research Session** (exploratory, no code changes):
+```bash
+ai-use-case document
+# Select "2) Research" when prompted
+# Auto-generates RESEARCH-XXX ticket
+# Perfect for architecture discussions and approach evaluations
 ```
 
 ### Manual Sync
@@ -148,6 +160,27 @@ du -sh ~/Documents/ai-use-case-hub/by-project/
 ```bash
 find ~/Documents/ai-use-case-hub/by-date -name "*.md" -type f -printf '%T@ %p\n' | sort -rn | head -5 | cut -d' ' -f2-
 ```
+
+## Templates
+
+### Implementation Session Template (🎯)
+**File**: `TEMPLATE.md`
+
+Use for sessions with code changes:
+- Git commits and file modifications
+- Code snippets and technical details
+- Test results and quality metrics
+
+### Research Session Template (🔬)
+**File**: `TEMPLATE-RESEARCH.md`
+
+Use for exploratory sessions without code:
+- Architecture discussions
+- Approach evaluations
+- Query refinement and decision-making
+- Investigative analysis
+
+Both templates are available in the hub root directory.
 
 ## Bash Aliases (Optional)
 
