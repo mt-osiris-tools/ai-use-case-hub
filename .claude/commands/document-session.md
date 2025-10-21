@@ -76,7 +76,7 @@ git commit -m "docs: AI session YYYY-MM-DD - TICKET-XXX - Brief description
 
 [Additional details about what was documented...]
 
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
+🤖 Generated with [Claude Code](https://claude.com/code)
 
 Co-Authored-By: Claude <noreply@anthropic.com>"
 ```

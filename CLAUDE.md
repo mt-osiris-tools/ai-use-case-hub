@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with this documentation hub repository.
+This file provides guidance to Claude Code (claude.com/code) when working with this documentation hub repository.
 
 ## Repository Purpose
 
